@@ -5,10 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class Scene : MonoBehaviour
 {
-    [SerializeField]
-    int sceneIndex;
-    public void SceneChange()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        SceneManager.LoadScene(sceneIndex);
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 }

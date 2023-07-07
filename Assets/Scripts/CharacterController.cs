@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterController : MonoBehaviour
 {
@@ -53,9 +54,9 @@ public class CharacterController : MonoBehaviour
     }
     private void NormalJumpForce()
     {
-        speed = 10f;
-        jumpForce = 5f;
+        _rigidbody.AddForce(transform.up*0, ForceMode2D.Impulse);
     }
+   
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("ground"))
@@ -67,9 +68,8 @@ public class CharacterController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("powerupjump"))
         {
-            speed = 20f;
             _rigidbody.AddForce(transform.up * 10f, ForceMode2D.Impulse);
-            Invoke("NormalJumpForce", 3f);
+            Invoke("NormalJumpForce", 2f);
         }
     }
 }
