@@ -67,7 +67,10 @@ public class CharacterController : MonoBehaviour
         {
             _isGrounded = true;
         }
-        
+        if (collision.gameObject.CompareTag("maplimit"))
+        {
+            SceneManager.LoadScene(5);
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -80,6 +83,10 @@ public class CharacterController : MonoBehaviour
         {
             _lives--;
             _livesText.text = "" + _lives;
+            if(_lives==0)
+            {
+                SceneManager.LoadScene(5);
+            }
         }
     }
 }

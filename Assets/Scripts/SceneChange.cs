@@ -37,8 +37,4 @@ public class SceneChange : MonoBehaviour
     {
         SceneManager.LoadScene(4);
     }
-    public void GameOver()
-    {
-        SceneManager.LoadScene(5);
-    }
 }

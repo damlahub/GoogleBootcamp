@@ -10,6 +10,7 @@ TagManager:
   - robotlimit
   - bullet
   - enemy
+  - maplimit
   layers:
   - Default
   - TransparentFX
