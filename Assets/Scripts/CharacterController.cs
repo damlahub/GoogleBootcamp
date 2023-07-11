@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,6 +13,8 @@ public class CharacterController : MonoBehaviour
     private bool _isGrounded;
     private bool _started;
     private bool _jumping;
+    private int _lives = 3;
+    public TextMeshProUGUI _livesText;
 
     private void Awake()
     {
@@ -20,6 +23,7 @@ public class CharacterController : MonoBehaviour
         _started = false;
         _isGrounded = true;
     }
+
     private void Update()
     {
         if (Input.GetKey("space"))
@@ -63,6 +67,7 @@ public class CharacterController : MonoBehaviour
         {
             _isGrounded = true;
         }
+        
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -70,6 +75,11 @@ public class CharacterController : MonoBehaviour
         {
             _rigidbody.AddForce(transform.up * 10f, ForceMode2D.Impulse);
             Invoke("NormalJumpForce", 2f);
+        }
+        if (collision.gameObject.CompareTag("bullet"))
+        {
+            _lives--;
+            _livesText.text = "" + _lives;
         }
     }
 }

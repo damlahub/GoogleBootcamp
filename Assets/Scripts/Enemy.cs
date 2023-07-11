@@ -7,7 +7,6 @@ public class Enemy : MonoBehaviour
     public Transform bulletSpawnPoint;
     public GameObject bulletPrefab;
     public float bulletSpeed = 10;
-
     
     void Start()
     {
