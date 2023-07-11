@@ -17,4 +17,28 @@ public class SceneChange : MonoBehaviour
             SceneManager.LoadScene(_scene.buildIndex + 1);
         }
     }
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+    public void levels()
+    {
+        SceneManager.LoadScene(1);
+    }
+    public void Lv1()
+    {
+        SceneManager.LoadScene(2);
+    }
+    public void Lv2()
+    {
+        SceneManager.LoadScene(3);
+    }
+    public void Lv3()
+    {
+        SceneManager.LoadScene(4);
+    }
+    public void GameOver()
+    {
+        SceneManager.LoadScene(5);
+    }
 }
