@@ -8,6 +8,8 @@ TagManager:
   - powerupjump
   - door
   - robotlimit
+  - bullet
+  - enemy
   layers:
   - Default
   - TransparentFX
